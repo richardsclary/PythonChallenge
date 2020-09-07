@@ -8,21 +8,21 @@
 import os
 import csv
 
-filename = "budget_data.csv"
+#filename = "budget_data.csv"
 
 ##### VARIABLE DECLARATION AND VALUES
-totalMonth = 0
-months = []
-currentMonthRevenue = 0
-previousMonthRevenue = 0
-totalRevenue = 0
-changeRevenue = 0
-changesRevenue = []
+#totalMonth = 0
+#months = []
+#currentMonthRevenue = 0
+#previousMonthRevenue = 0
+#totalRevenue = 0
+#changeRevenue = 0
+#changesRevenue = []
 
 ##### READING OF CSV FILE INTO MEMORY
 
 headers = []
-rows = []
+#rows = []
 
 # opening the CSV file 
 with open('budget_data.csv', mode ='r') as file: 
