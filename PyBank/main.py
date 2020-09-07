@@ -9,25 +9,21 @@ import os
 import csv
 
 ##### VARIABLE DECLARATION AND INITIAL VALUES
-date = []
-revenue = [] 
-months = []
-averageRevenueChange = []
-
+ 
 ##### INITIAL VALUES FOR VARIABLES
-monthTotal = 0
-totalRevenue = 0
-greatestIncreaseRevenue = 0
-greatestDecreaseRevenue = 0
-averageRevenue = 0
 
-revenueChange = 0
-revenueChanges = 
-
+totalMonth = 0
+months = []
 currentMonthRevenue = 0
 previousMonthRevenue = 0
 
+totalRevenue = 0
+changeRevenue = 0
+changesRevenue = []
 
+
+greatestIncreaseRevenue = 0
+greatestDecreaseRevenue = 0
 
 ##### READING OF CSV FILE INTO MEMORY
 
@@ -40,13 +36,15 @@ with open (filepath, 'r', newline = "") as csvfile:
 ##### DETERMINE MONTHLY CHANGES IN REVENUE
 
     for row in csvreader:
-        monthTotal = monthTotal + 1
+        totalMonth = totalMonth + 1
         months.append(row[0])
         currentMonthRevenue = int(row[1])
         totalRevenue = totalRevenue + currentMonthRevenue
-        if monthTotal > 1:
-            revenueChange = currentMonthRevenue - previousMonthRevenue
-            revenueChanges.append(revenueChange)
+        if totalMonth > 1:
+            changeRevenue = currentMonthRevenue - previousMonthRevenue
+            changesRevenue.append(changeRevenue)
+        else previousMonthRevenue = currentMonthRevenue
+
 
             
         
