@@ -34,7 +34,8 @@ with open (filepath, 'r', newline = "") as csvfile:
         if totalMonth > 1:
             changeRevenue = currentMonthRevenue - previousMonthRevenue
             changesRevenue.append(changeRevenue)
-        else previousMonthRevenue = currentMonthRevenue
+    
+        previousMonthRevenue = currentMonthRevenue
 
 ##### ANALYZE DATA FROM ABOVE ITERATION
 
@@ -69,8 +70,8 @@ with open(filepath, 'w') as text:
     text.write(f"Greatest Increase in Revenue: {maxMonth} (${maxChange}" + "\n")
     text.write(f"Greatest Decrease in Revenue: {minMonth} (${minChange}" + "\n")
     text.write("-------------------------")
-    
-      
+
+
 
 
 
