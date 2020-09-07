@@ -8,6 +8,8 @@
 import os
 import csv
 
+filename = "budget_data.csv"
+
 ##### VARIABLE DECLARATION AND VALUES
 totalMonth = 0
 months = []
@@ -16,13 +18,33 @@ previousMonthRevenue = 0
 totalRevenue = 0
 changeRevenue = 0
 changesRevenue = []
+
 ##### READING OF CSV FILE INTO MEMORY
 
-filepath = os.path("~/Resources/,", "budget_data.csv")
+headers = []
+rows = []
 
-with open (filepath, 'r', newline = "") as csvfile:
-    csvreader = csv.reader(csvfile, delimiter = ',')
-    next(csvreader) 
+# opening the CSV file 
+with open('budget_data.csv', mode ='r') as file: 
+    
+  # reading the CSV file 
+  csvFile = csv.reader(file) 
+  
+  # displaying the contents of the CSV file 
+  for lines in csvFile: 
+        print(lines) 
+
+
+#with open ('budget_data.csv', mode = 'r') as csvfile:
+ #   csvreader = csv.reader(csvfile, delimiter = ',')
+  #  headers = csvreader.next()
+   # for row is csvreader:
+   #     rows.append()
+   # print("Total Number of Rows: %d"%).csvreader.line_num
+   # print('Header Names are:' + ', '.join(field for field in fields))
+
+
+   # next(csvreader) 
 
 ##### DETERMINE MONTHLY CHANGES IN REVENUE BY ITERATING OVER ALL ROWS
 
