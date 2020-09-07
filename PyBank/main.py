@@ -18,7 +18,7 @@ changeRevenue = 0
 changesRevenue = []
 ##### READING OF CSV FILE INTO MEMORY
 
-filepath = os.path("budget_data.csv", filename)
+filepath = os.path("~/Resources/,", "budget_data.csv")
 
 with open (filepath, 'r', newline = "") as csvfile:
     csvreader = csv.reader(csvfile, delimiter = ',')
@@ -59,7 +59,7 @@ print(f"Greatest Increase in Revenue: {maxMonth} (${maxChange}")
 print(f"Greatest Decrease in Revenue: {minMonth} (${minChange}")
 print("-------------------------")
 
-saveFile = filename.strip(".csv") + "_results.txt"
+#saveFile = filename.strip(".csv") + "_results.txt"
 filepath
 with open(filepath, 'w') as text:
     text.write("Financial Analysis" + "\n")
