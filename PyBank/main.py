@@ -27,11 +27,11 @@ rows = []
 # opening the CSV file 
 with open('budget_data.csv', mode ='r') as file: 
     
-  # reading the CSV file 
-  csvFile = csv.reader(file) 
+# reading the CSV file 
+    csvFile = csv.reader(file) 
   
-  # displaying the contents of the CSV file 
-  for lines in csvFile: 
+# displaying the contents of the CSV file 
+    for lines in csvFile: 
         print(lines) 
 
 
@@ -48,50 +48,50 @@ with open('budget_data.csv', mode ='r') as file:
 
 ##### DETERMINE MONTHLY CHANGES IN REVENUE BY ITERATING OVER ALL ROWS
 
-    for row in csvreader:
-        totalMonth = totalMonth + 1
-        months.append(row[0])
-        currentMonthRevenue = int(row[1])
-        totalRevenue = totalRevenue + currentMonthRevenue
-        if totalMonth > 1:
-            changeRevenue = currentMonthRevenue - previousMonthRevenue
-            changesRevenue.append(changeRevenue)
+ #   for row in csvreader:
+ #       totalMonth = totalMonth + 1
+ #       months.append(row[0])
+ #       currentMonthRevenue = int(row[1])
+ #       totalRevenue = totalRevenue + currentMonthRevenue
+ #       if totalMonth > 1:
+ #           changeRevenue = currentMonthRevenue - previousMonthRevenue
+ #           changesRevenue.append(changeRevenue)
     
-        previousMonthRevenue = currentMonthRevenue
+ #       previousMonthRevenue = currentMonthRevenue
 
 ##### ANALYZE DATA FROM ABOVE ITERATION
 
-sumChangesRevenue = sum(changesRevenue)
-averageChange = sumChangesRevenue / (totalMonth - 1)
-maxChange = max(changesRevenue)
-minChange = min(changesRevenue)
-maxMonthIndex = changesRevenue.index(maxChange)
-minMonthIndex = changesRevenue.index(minChange)
-maxMonth = months[maxMonthIndex]
-minMonth = months[minMonthIndex]
+#sumChangesRevenue = sum(changesRevenue)
+#averageChange = sumChangesRevenue / (totalMonth - 1)
+#maxChange = max(changesRevenue)
+#minChange = min(changesRevenue)
+#maxMonthIndex = changesRevenue.index(maxChange)
+#minMonthIndex = changesRevenue.index(minChange)
+#maxMonth = months[maxMonthIndex]
+#minMonth = months[minMonthIndex]
 
 ##### SUMMARY OUTPUT TO SCREEN
 
-print("Financial Analysis")
-print("-------------------------")
-print(f"Total Months: {totalMonth}")
-print(f"Total Revenue: ${totalRevenue}")
-print(f"Average Revenue Change: ${averageChange}")
-print(f"Greatest Increase in Revenue: {maxMonth} (${maxChange}")
-print(f"Greatest Decrease in Revenue: {minMonth} (${minChange}")
-print("-------------------------")
+#print("Financial Analysis")
+#print("-------------------------")
+#print(f"Total Months: {totalMonth}")
+#print(f"Total Revenue: ${totalRevenue}")
+#print(f"Average Revenue Change: ${averageChange}")
+#print(f"Greatest Increase in Revenue: {maxMonth} (${maxChange}")
+#print(f"Greatest Decrease in Revenue: {minMonth} (${minChange}")
+#print("-------------------------")
 
 #saveFile = filename.strip(".csv") + "_results.txt"
-filepath
-with open(filepath, 'w') as text:
-    text.write("Financial Analysis" + "\n")
-    text.write("-------------------------" + "\n")
-    text.write(f"Total Months: {totalMonth}" + "\n")
-    text.write(f"Total Revenue: ${totalRevenue}" + "\n")
-    text.write(f"Average Revenue Change: ${averageChange}" + "\n")
-    text.write(f"Greatest Increase in Revenue: {maxMonth} (${maxChange}" + "\n")
-    text.write(f"Greatest Decrease in Revenue: {minMonth} (${minChange}" + "\n")
-    text.write("-------------------------")
+#filepath
+#with open(filepath, 'w') as text:
+#    text.write("Financial Analysis" + "\n")
+#    text.write("-------------------------" + "\n")
+#    text.write(f"Total Months: {totalMonth}" + "\n")
+#    text.write(f"Total Revenue: ${totalRevenue}" + "\n")
+#    text.write(f"Average Revenue Change: ${averageChange}" + "\n")
+#    text.write(f"Greatest Increase in Revenue: {maxMonth} (${maxChange}" + "\n")
+#    text.write(f"Greatest Decrease in Revenue: {minMonth} (${minChange}" + "\n")
+ #   text.write("-------------------------")
 
 
 
@@ -100,9 +100,6 @@ with open(filepath, 'w') as text:
 
 
             
-        
-
-##### PRINT TO TERMINAL
 
 
 
