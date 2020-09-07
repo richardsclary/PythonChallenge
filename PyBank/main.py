@@ -47,6 +47,31 @@ minMonthIndex = changesRevenue.index(minChange)
 maxMonth = months[maxMonthIndex]
 minMonth = months[minMonthIndex]
 
+##### SUMMARY OUTPUT TO SCREEN
+
+print("Financial Analysis")
+print("-------------------------")
+print(f"Total Months: {totalMonth}")
+print(f"Total Revenue: ${totalRevenue}")
+print(f"Average Revenue Change: ${averageChange}")
+print(f"Greatest Increase in Revenue: {maxMonth} (${maxChange}")
+print(f"Greatest Decrease in Revenue: {minMonth} (${minChange}")
+print("-------------------------")
+
+saveFile = filename.strip(".csv") + "_results.txt"
+filepath
+with open(filepath, 'w') as text:
+    text.write("Financial Analysis" + "\n")
+    text.write("-------------------------" + "\n")
+    text.write(f"Total Months: {totalMonth}" + "\n")
+    text.write(f"Total Revenue: ${totalRevenue}" + "\n")
+    text.write(f"Average Revenue Change: ${averageChange}" + "\n")
+    text.write(f"Greatest Increase in Revenue: {maxMonth} (${maxChange}" + "\n")
+    text.write(f"Greatest Decrease in Revenue: {minMonth} (${minChange}" + "\n")
+    text.write("-------------------------")
+    
+      
+
 
 
 
