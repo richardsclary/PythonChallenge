@@ -25,7 +25,7 @@ headers = []
 #rows = []
 
 # opening the CSV file 
-with open('budget_data.csv', mode ='r') as file: 
+with open('Users/rsc/Desktop/BCS Homework Assignments/HW #3/PythonChallenge/PyBank/Resources/budget_data.csv', mode ='r') as file: 
     
 # reading the CSV file 
     csvFile = csv.reader(file) 
