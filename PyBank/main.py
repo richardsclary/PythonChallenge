@@ -23,7 +23,7 @@ previousMonthRevenue = 0
 
 ##### READING OF CSV FILE INTO MEMORY
 
-filename = "/Users/rsc/Desktop/BCS Homework Assignments/HW #3/PythonChallenge/PyBank/budget_data.csv"
+filename = "/Users/rsc/Documents/budget_data.csv"
 
 with open(filename, mode = 'r', newline = "") as csvFile: 
     csvreader = csv.reader(csvFile, delimeter=",") 
