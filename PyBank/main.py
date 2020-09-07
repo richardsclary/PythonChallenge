@@ -8,32 +8,23 @@
 import os
 import csv
 
-##### VARIABLE DECLARATION AND INITIAL VALUES
- 
-##### INITIAL VALUES FOR VARIABLES
-
+##### VARIABLE DECLARATION AND VALUES
 totalMonth = 0
 months = []
 currentMonthRevenue = 0
 previousMonthRevenue = 0
-
 totalRevenue = 0
 changeRevenue = 0
 changesRevenue = []
-
-
-greatestIncreaseRevenue = 0
-greatestDecreaseRevenue = 0
-
 ##### READING OF CSV FILE INTO MEMORY
 
-filepath = os.path("rawData", filename)
+filepath = os.path("budget_data.csv", filename)
 
 with open (filepath, 'r', newline = "") as csvfile:
     csvreader = csv.reader(csvfile, delimiter = ',')
     next(csvreader) 
 
-##### DETERMINE MONTHLY CHANGES IN REVENUE
+##### DETERMINE MONTHLY CHANGES IN REVENUE BY ITERATING OVER ALL ROWS
 
     for row in csvreader:
         totalMonth = totalMonth + 1
@@ -44,6 +35,20 @@ with open (filepath, 'r', newline = "") as csvfile:
             changeRevenue = currentMonthRevenue - previousMonthRevenue
             changesRevenue.append(changeRevenue)
         else previousMonthRevenue = currentMonthRevenue
+
+##### ANALYZE DATA FROM ABOVE ITERATION
+
+sumChangesRevenue = sum(changesRevenue)
+averageChange = sumChangesRevenue / (totalMonth - 1)
+maxChange = max(changesRevenue)
+minChange = min(changesRevenue)
+maxMonthIndex = changesRevenue.index(maxChange)
+minMonthIndex = changesRevenue.index(minChange)
+maxMonth = months[maxMonthIndex]
+minMonth = months[minMonthIndex]
+
+
+
 
 
             
