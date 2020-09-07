@@ -23,7 +23,7 @@ previousMonthRevenue = 0
 
 ##### READING OF CSV FILE INTO MEMORY
 
-with open("/Users/rsc/BCSDataFiles/budget_data.csv", mode = 'r', newline = "") as csvFile: 
+with open("/Users/rsc/Desktop/BCS Homework Assignments/HW #3/PythonChallenge/PyBank/budget_data.csv", mode = 'r', newline = "") as csvFile: 
     csvreader = csv.reader(csvFile, delimeter=",") 
     
     next(csvreader)
@@ -73,7 +73,6 @@ with open("output.txt", 'w+') as file:
     file.write(f"Greatest Increase in Revenue: {maxMonth} (${maxChange}" + "\n")
     file.write(f"Greatest Decrease in Revenue: {minMonth} (${minChange}" + "\n")
     file.write("-------------------------")
-
 
 
 
