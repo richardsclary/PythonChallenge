@@ -33,7 +33,8 @@ with open(filename, mode = 'r', newline="") as csvfile:
         months.append(row[0])
         currentMonthRevenue = int(row[1])
         totalRevenue = totalRevenue + currentMonthRevenue
-            if totalMonth > 1:
+        
+        if totalMonth > 1:
                 changeRevenue = currentMonthRevenue - previousMonthRevenue
                 changesRevenue.append(changeRevenue)
             previousMonthRevenue = currentMonthRevenue
