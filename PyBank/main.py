@@ -63,8 +63,9 @@ print(f"Greatest Increase in Revenue: {maxMonth} (${maxChange}")
 print(f"Greatest Decrease in Revenue: {minMonth} (${minChange}")
 print("-------------------------")
 
-outputfile = "/Users/rsc/BCSDataFiles/analysis.txt"
-with open(outputFile, 'w+') as file:
+saveFile = filename.strip(".csv") + "_analysis.txt"
+filepath = os.path.join(".", saveFile)
+with open(filename,'w+') as file:
 
     file.write("Financial Analysis" + "\n") 
     file.write("-------------------------" + "\n")
