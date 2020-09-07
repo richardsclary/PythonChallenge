@@ -18,6 +18,8 @@ previousMonthRevenue = 0
 totalRevenue = 0
 changeRevenue = 0
 changesRevenue = []
+thisMonthRevenue = 0
+previousMonthRevenue = 0
 
 ##### READING OF CSV FILE INTO MEMORY
 filename = "/Users/rsc/BCSDataFiles/budget_data.csv"
@@ -37,7 +39,7 @@ with open(filename, mode = 'r', newline="") as csvfile:
         if totalMonth > 1:
                 changeRevenue = currentMonthRevenue - previousMonthRevenue
                 changesRevenue.append(changeRevenue)
-            previousMonthRevenue = currentMonthRevenue
+        previousMonthRevenue = currentMonthRevenue
 
 ##### ANALYZE DATA FROM ABOVE ITERATION
 
