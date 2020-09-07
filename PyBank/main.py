@@ -22,10 +22,10 @@ thisMonthRevenue = 0
 previousMonthRevenue = 0
 
 ##### READING OF CSV FILE INTO MEMORY
-filename = "/Users/rsc/BCSDataFiles/budget_data.csv"
 
-with open(filename, mode = 'r', newline="") as csvFile: 
+with open("/Users/rsc/BCSDataFiles/budget_data.csv", mode = 'r', newline = "") as csvFile: 
     csvreader = csv.reader(csvFile, delimeter=",") 
+    
     next(csvreader)
     
 ##### DETERMINE MONTHLY CHANGES IN REVENUE BY ITERATING OVER ALL ROWS
