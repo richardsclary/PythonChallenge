@@ -25,7 +25,7 @@ previousMonthRevenue = 0
 filename = "/Users/rsc/BCSDataFiles/budget_data.csv"
 
 with open(filename, mode = 'r', newline="") as csvfile: 
-    csvreader = csv.reader(csvfile, delimeter = ",") 
+    csvreader = csv.reader(csvfile, delimeter=",") 
     next(csvreader)
     
 ##### DETERMINE MONTHLY CHANGES IN REVENUE BY ITERATING OVER ALL ROWS
