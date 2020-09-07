@@ -8,8 +8,6 @@
 import os
 import csv
 
-#filename = "budget_data.csv"
-
 ##### VARIABLE DECLARATION AND VALUES
 totalMonth = 0
 months = []
