@@ -63,7 +63,8 @@ print(f"Greatest Increase in Revenue: {maxMonth} (${maxChange}")
 print(f"Greatest Decrease in Revenue: {minMonth} (${minChange}")
 print("-------------------------")
 
-with open("output.txt", 'w+') as file
+with open("output.txt", 'w+') as file:
+
     file.write("Financial Analysis" + "\n") 
     file.write("-------------------------" + "\n")
     file.write(f"Total Months: {totalMonth}" + "\n")
