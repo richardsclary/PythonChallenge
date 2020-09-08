@@ -1,14 +1,21 @@
-##### ANALYSIS.PY------------------------------
+##### --------------------------------------------------
+##### electionAnalysis.py
+##### --------------------------------------------------
 ##### This python script was created to analyze the financial
-##### data of a company located in the file, "budget_data.csv"
-##### located in the Resources folder, both of which are located 
-##### under the home directory, 'PyBank'.
+##### data of a company--this data is located in the file, 
+##### "budget_data.csv", which can be found in the 'Resources'
+##### folder.  The summary output file, 'revenueAnalysis.txt' can
+##### be found in the 'Analysis' folder.  Both of these folders,
+##### along with this script are located in the 'PyBank' folder.
+##### --------------------------------------------------
  
+##### MODULE IMPORTATION
 
 import os
 import csv
 
 ##### VARIABLE DECLARATION AND VALUES
+
 totalMonth = 0
 months = []
 currentMonthRevenue = 0
@@ -57,14 +64,14 @@ print("Financial Analysis")
 print("-------------------------")
 print(f"Total Months: {totalMonth}")
 print(f"Total Revenue: ${totalRevenue}")
-print(f"Average Revenue Change: ${averageChange}")
+print(f"Average Revenue Change: ${int(averageChange)}")
 print(f"Greatest Increase in Revenue: {maxMonth} (${maxChange})")
 print(f"Greatest Decrease in Revenue: {minMonth} (${minChange})")
 print("-------------------------")
 
 ##### WRITING THE RESULTS TO A TEXT FILE
 
-outputFile = "/Users/rsc/Desktop/BCS Homework Assignments/HW #3/PythonChallenge/PyBank/Analysis/analysis.txt"
+outputFile = "/Users/rsc/Desktop/BCS Homework Assignments/HW #3/PythonChallenge/PyBank/Analysis/revenueAnalysis.txt"
 with open(outputFile, 'w+') as file:
 
     file.write("-------------------------" + "\n")
@@ -72,7 +79,7 @@ with open(outputFile, 'w+') as file:
     file.write("-------------------------" + "\n")
     file.write(f"Total Months: {totalMonth}" + "\n")
     file.write(f"Total Revenue: ${totalRevenue}" + "\n")
-    file.write(f"Average Revenue Change: ${averageChange}" + "\n")
+    file.write(f"Average Revenue Change: ${int(averageChange)}" + "\n")
     file.write(f"Greatest Increase in Revenue: {maxMonth} (${maxChange})" + "\n")
     file.write(f"Greatest Decrease in Revenue: {minMonth} (${minChange})" + "\n")
     file.write("-------------------------" + "\n")
