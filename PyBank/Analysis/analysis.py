@@ -43,9 +43,9 @@ with open(filename, mode = 'r', newline = "") as csvFile:
 ##### ANALYZE DATA FROM ABOVE ITERATION
 
 sumChangesRevenue = sum(changesRevenue)
-averageChange = sumChangesRevenue / (totalMonth - 1)
-maxChange = max(changesRevenue)
-minChange = min(changesRevenue)
+averageChange = (sumChangesRevenue / (totalMonth - 1)
+#maxChange = max(changesRevenue)
+#minChange = min(changesRevenue)
 maxMonthIndex = changesRevenue.index(maxChange)
 minMonthIndex = changesRevenue.index(minChange)
 maxMonth = months[maxMonthIndex]
@@ -69,14 +69,14 @@ outputFile = "/Users/rsc/Desktop/BCS Homework Assignments/HW #3/PythonChallenge/
 #outputFile = "/PyBank/Analysis/analysis.txt"
 with open(outputFile, 'w+') as file:
 
-    file.write("-------------------------")
+    file.write("-------------------------" + "\n")
     file.write("Financial Analysis" + "\n") 
     file.write("-------------------------" + "\n")
     file.write(f"Total Months: {totalMonth}" + "\n")
     file.write(f"Total Revenue: ${totalRevenue}" + "\n")
     file.write(f"Average Revenue Change: ${averageChange}" + "\n")
-    file.write(f"Greatest Increase in Revenue: {maxMonth} (${maxChange}" + "\n")
-    file.write(f"Greatest Decrease in Revenue: {minMonth} (${minChange}" + "\n")
+    file.write(f"Greatest Increase in Revenue: {maxMonth} (${maxChange})" + "\n")
+    file.write(f"Greatest Decrease in Revenue: {minMonth} (${minChange})" + "\n")
     file.write("-------------------------")
     file.close()
 
