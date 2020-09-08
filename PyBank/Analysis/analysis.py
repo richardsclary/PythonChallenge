@@ -1,4 +1,4 @@
-##### MAIN.PY------------------------------
+##### ANALYSIS.PY------------------------------
 ##### This python script was created to analyze the financial
 ##### data of a company located in the file, "budget_data.csv"
 ##### located in the Resources folder, both of which are located 
@@ -21,7 +21,6 @@ previousMonthRevenue = 0
 
 ##### READING OF CSV FILE INTO MEMORY
 
-#'filename = "/Users/rsc/BCSDataFiles/budget_data.csv"
 filename = "/Users/rsc/Desktop/BCS Homework Assignments/HW #3/PythonChallenge/PyBank/Resources/budget_data.csv"
 with open(filename, mode = 'r', newline = "") as csvFile: 
     csvreader = csv.reader(csvFile) 
@@ -43,9 +42,9 @@ with open(filename, mode = 'r', newline = "") as csvFile:
 ##### ANALYZE DATA FROM ABOVE ITERATION
 
 sumChangesRevenue = sum(changesRevenue)
-averageChange = (sumChangesRevenue / (totalMonth - 1)
-#maxChange = max(changesRevenue)
-#minChange = min(changesRevenue)
+averageChange = sumChangesRevenue / (totalMonth - 1)
+maxChange = max(changesRevenue)
+minChange = min(changesRevenue)
 maxMonthIndex = changesRevenue.index(maxChange)
 minMonthIndex = changesRevenue.index(minChange)
 maxMonth = months[maxMonthIndex]
@@ -59,14 +58,13 @@ print("-------------------------")
 print(f"Total Months: {totalMonth}")
 print(f"Total Revenue: ${totalRevenue}")
 print(f"Average Revenue Change: ${averageChange}")
-print(f"Greatest Increase in Revenue: {maxMonth} (${maxChange}")
-print(f"Greatest Decrease in Revenue: {minMonth} (${minChange}")
+print(f"Greatest Increase in Revenue: {maxMonth} (${maxChange})")
+print(f"Greatest Decrease in Revenue: {minMonth} (${minChange})")
 print("-------------------------")
 
 ##### WRITING THE RESULTS TO A TEXT FILE
 
 outputFile = "/Users/rsc/Desktop/BCS Homework Assignments/HW #3/PythonChallenge/PyBank/Analysis/analysis.txt"
-#outputFile = "/PyBank/Analysis/analysis.txt"
 with open(outputFile, 'w+') as file:
 
     file.write("-------------------------" + "\n")
@@ -77,15 +75,5 @@ with open(outputFile, 'w+') as file:
     file.write(f"Average Revenue Change: ${averageChange}" + "\n")
     file.write(f"Greatest Increase in Revenue: {maxMonth} (${maxChange})" + "\n")
     file.write(f"Greatest Decrease in Revenue: {minMonth} (${minChange})" + "\n")
-    file.write("-------------------------")
+    file.write("-------------------------" + "\n")
     file.close()
-
-
-
-
-
-            
-
-
-
-
