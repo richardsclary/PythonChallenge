@@ -21,10 +21,10 @@ previousMonthRevenue = 0
 
 ##### READING OF CSV FILE INTO MEMORY
 
-#filename = "/Users/rsc/BCSDataFiles/budget_data.csv"
-
-with open('/Users/rsc/BCSDataFiles/budget_data.csv', mode = 'r', newline = "") as csvFile: 
-    csvreader = csv.reader(csvFile, delimeter = ",") 
+#'filename = "/Users/rsc/BCSDataFiles/budget_data.csv"
+filename = "/Users/rsc/Desktop/BCS Homework Assignments/HW #3/PythonChallenge/PyBank/Resources/budget_data.csv"
+with open(filename, mode = 'r', newline = "") as csvFile: 
+    csvreader = csv.reader(csvFile) 
     next(csvreader)
     
 ##### DETERMINE MONTHLY CHANGES IN REVENUE BY ITERATING OVER ALL ROWS
@@ -53,6 +53,7 @@ minMonth = months[minMonthIndex]
 
 ##### SUMMARY OUTPUT TO SCREEN
 
+print("-------------------------")
 print("Financial Analysis")
 print("-------------------------")
 print(f"Total Months: {totalMonth}")
@@ -62,8 +63,13 @@ print(f"Greatest Increase in Revenue: {maxMonth} (${maxChange}")
 print(f"Greatest Decrease in Revenue: {minMonth} (${minChange}")
 print("-------------------------")
 
-with open("output.txt", 'w+') as file:
+##### WRITING THE RESULTS TO A TEXT FILE
 
+outputFile = "/Users/rsc/Desktop/BCS Homework Assignments/HW #3/PythonChallenge/PyBank/Analysis/analysis.txt"
+#outputFile = "/PyBank/Analysis/analysis.txt"
+with open(outputFile, 'w+') as file:
+
+    file.write("-------------------------")
     file.write("Financial Analysis" + "\n") 
     file.write("-------------------------" + "\n")
     file.write(f"Total Months: {totalMonth}" + "\n")
@@ -72,7 +78,7 @@ with open("output.txt", 'w+') as file:
     file.write(f"Greatest Increase in Revenue: {maxMonth} (${maxChange}" + "\n")
     file.write(f"Greatest Decrease in Revenue: {minMonth} (${minChange}" + "\n")
     file.write("-------------------------")
-
+    file.close()
 
 
 
